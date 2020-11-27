@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXButton?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: white" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zjyz.designer.controller.MainController">
+    <children>
+        <Label layoutX="73.0" layoutY="34.0" prefHeight="23.0" prefWidth="80.0" text="源表名称"/>
+        <JFXTextField layoutX="187.0" layoutY="34.0" fx:id="sourceNameField" text="127.0.0.1" editable="false"/>
+        <Label layoutX="73.0" layoutY="81.0" prefHeight="23.0" prefWidth="80.0" text="源表字段" />
+        <JFXComboBox layoutX="187.0" promptText="请选择字段" layoutY="81.0" fx:id="sourceFieldComboBox" prefHeight="23.0" prefWidth="50.0" minWidth="150"/>
+        <Label layoutX="73.0" layoutY="128.0" prefHeight="23.0" prefWidth="80.0" text="目标表名称" />
+        <JFXTextField layoutX="187.0"  layoutY="128.0" fx:id="targetNameField" text="3308" editable="false"/>
+        <Label layoutX="73.0" layoutY="170.0" prefHeight="23.0" prefWidth="80.0" text="目标表字段" />
+        <JFXComboBox layoutX="187.0" promptText="请选择字段" layoutY="170.0" fx:id="targetFieldComboBox" prefHeight="23.0" prefWidth="50.0" minWidth="150"/>
+
+
+
+        <JFXButton layoutX="282.0" layoutY="256.0" mnemonicParsing="false" text="设置"  onAction="#saveEditRelation"/>
+        <JFXButton layoutX="328.0" layoutY="256.0" mnemonicParsing="false" text="取消" onAction="#closeEditRelation"/>
+
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: white" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zjyz.designer.controller.MainController">
+   <children>
+       <Label layoutX="73.0" layoutY="34.0" prefHeight="23.0" prefWidth="50.0" text="连接名" />
+       <JFXTextField fx:id="connectionName" layoutX="187.0" layoutY="34.0" text="112.126.120.42" />
+       <Label layoutX="73.0" layoutY="81.0" prefHeight="23.0" prefWidth="50.0" text="主机名" />
+       <JFXTextField fx:id="iPName" layoutX="187.0" layoutY="81.0" text="112.126.120.42" />
+       <Label layoutX="73.0" layoutY="128.0" prefHeight="23.0" prefWidth="50.0" text="端口" />
+       <JFXTextField fx:id="port" layoutX="187.0" layoutY="128.0" text="3306" />
+       <Label layoutX="73.0" layoutY="170.0" prefHeight="23.0" prefWidth="50.0" text="用户名" />
+       <JFXTextField fx:id="username" layoutX="187.0" layoutY="170.0" text="zzyj" />
+       <Label layoutX="73.0" layoutY="213.0" prefHeight="23.0" prefWidth="50.0" text="密码" />
+       <JFXPasswordField fx:id="password" layoutX="187.0" layoutY="213.0" text="ZZYJistop1!" />
+
+
+       <JFXButton buttonType="RAISED" layoutX="41.0" layoutY="256.0" mnemonicParsing="false" onAction="#DbTest" style="-fx-font-size:14px;-fx-background-color:WHITE;" text="连接测试" />
+
+       <JFXButton buttonType="RAISED" layoutX="270.0" layoutY="256.0" mnemonicParsing="false" onAction="#dbConnection" style="-fx-font-size:14px;-fx-background-color:WHITE;" text="确认" />
+       <JFXButton buttonType="RAISED" layoutX="334.0" layoutY="256.0" mnemonicParsing="false" onAction="#closeConnection" style="-fx-font-size:14px;-fx-background-color:WHITE;" text="取消" />
+
+   </children>
+</AnchorPane>

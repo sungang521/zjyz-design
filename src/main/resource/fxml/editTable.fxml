@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: white" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zjyz.designer.controller.MainController">
+   <children>
+      <Pane fx:id="editPane" prefHeight="200.0" prefWidth="500.0">
+         <children>
+            <TableView prefHeight="250.0" prefWidth="500.0" fx:id="editTableView">
+
+            </TableView>
+         </children></Pane>
+     
+       <JFXButton layoutX="157.0" layoutY="255.0" mnemonicParsing="false" onAction="#saveTable" text="保存" />
+       <JFXButton layoutX="203.0" layoutY="255.0" mnemonicParsing="false" onAction="#closeEdit" text="取消" />
+
+   </children>
+</AnchorPane>
