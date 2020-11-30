@@ -1207,13 +1207,6 @@ public class MainController  implements Initializable {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-
-
-
-
-
-
-
                 }
 
                 FieldModel fieldModel=new FieldModel();
@@ -1230,9 +1223,15 @@ public class MainController  implements Initializable {
 
             if(CollectionUtil.isNotEmpty(result)){
                 Optional<TableView> optionalTableView=pane.getChildren().stream().filter(v->{
-                    TitledPane titledPane= (TitledPane) v;
-                    TableView tableView = (TableView) titledPane.getContent();
-                    return tableView.getId().equals(queryModel.getTableName());
+                    boolean status=false;
+                    if(TitledPane.class.isInstance(v)){
+
+                        TitledPane titledPane= (TitledPane) v;
+                        TableView tableView = (TableView) titledPane.getContent();
+                        status=tableView.getId().equals(queryModel.getTableName());
+                    }
+
+                    return status;
                 }).map(v->{
                     TitledPane titledPane= (TitledPane) v;
                     TableView tableView = (TableView) titledPane.getContent();
@@ -1241,9 +1240,14 @@ public class MainController  implements Initializable {
                 optionalTableView.get().setItems(FXCollections.observableArrayList(result));
 
                 Optional<TitledPane> optionalTitledPane=pane.getChildren().stream().filter(v->{
-                    TitledPane titledPane= (TitledPane) v;
 
-                    return  titledPane.getId().equals("titledPane"+queryModel.getTableName());
+                    boolean status=false;
+                    if(TitledPane.class.isInstance(v)){
+                        TitledPane titledPane= (TitledPane) v;
+                        status= titledPane.getId().equals("titledPane"+queryModel.getTableName());
+                    }
+                    return  status;
+
                 }).map(v->(TitledPane) v).findAny();
                 if(optionalTitledPane.isPresent()){
                     TableModel tableModel= (TableModel) optionalTitledPane.get().getUserData();

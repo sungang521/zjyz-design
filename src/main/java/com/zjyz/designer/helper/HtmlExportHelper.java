@@ -63,7 +63,7 @@ public class HtmlExportHelper implements IExport<String> {
                 Element row = element.appendElement("tr");
                 row.appendElement("td").text(fieldModel.getColumnName());
                 row.appendElement("td").text(fieldModel.getColumnType());
-                row.appendElement("td").text(fieldModel.getColumnKey());
+                row.appendElement("td").text(fieldModel.getColumnKey()==null ?EMPTY:fieldModel.getColumnKey());
                 row.appendElement("td").text(fieldModel.getIsNullable() == null ? EMPTY : fieldModel.getIsNullable());
                 row.appendElement("td").text(fieldModel.getColumnComment() == null ? EMPTY : fieldModel.getColumnComment());
                 row.appendElement("td").text(fieldModel.getColumnDefault() == null ? EMPTY : fieldModel.getColumnDefault());
